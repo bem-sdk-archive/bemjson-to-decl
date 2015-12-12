@@ -43,6 +43,12 @@ function getEntities(bemjson, ctx) {
 
         bemjson.mix && (deps = deps.concat(_getEntities(bemjson.mix, ctx)));
 
+        var forbiddenKeys = ['content', 'mods', 'js', 'attrs']
+        Object.keys(bemjson).filter(function(key) {
+            return forbiddenKeys.indexOf(key) == -1;
+        }).forEach(function(key) {
+            deps = deps.concat(_getEntities(bemjson[key], ctx));
+        });
         bemjson.content && (deps = deps.concat(_getEntities(bemjson.content, ctx)));
 
         return deps.filter(Boolean);
