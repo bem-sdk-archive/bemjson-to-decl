@@ -1,4 +1,4 @@
-var stringifyObj = require('stringify-object'),
+var stringifyBemDecl = require('bem-decl').stringify,
     normalize = require('bem-decl').normalize,
     BemEntity = require('@bem/entity-name'),
     naming = require('bem-naming');
@@ -69,7 +69,9 @@ function stringify(bemjson, ctx, opts) {
     opts || (opts = {});
     opts.indent || (opts.indent = '    ');
 
-    return stringifyObj(getEntities(bemjson, ctx), opts);
+    console.log(getEntities(bemjson, ctx));
+
+    return stringifyBemDecl(getEntities(bemjson, ctx), opts);
 }
 
 module.exports = {

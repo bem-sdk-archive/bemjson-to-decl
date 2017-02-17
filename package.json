@@ -17,6 +17,9 @@
     "deps",
     "converter"
   ],
+  "engines": {
+    "node": ">= 4"
+  },
   "author": "Vladimir Grinenko",
   "license": "MPL-2.0",
   "bugs": {
@@ -25,7 +28,7 @@
   "homepage": "https://github.com/bem-sdk/bemjson-to-decl",
   "dependencies": {
     "@bem/entity-name": "^1.2.0",
-    "bem-decl": "^0.1.0",
+    "bem-decl": "^0.3.0",
     "bem-naming": "^1.0.1",
     "stringify-object": "^2.4.0"
   }
